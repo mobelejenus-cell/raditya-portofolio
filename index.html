@@ -3,30 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Raditya</title>
+  <title>Portofolio Raditya Pratama</title>
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      text-align: center; 
-      background: #f4f4f4; 
-      padding: 50px; 
-      margin: 0; 
-    }
-    .profil { 
-      width: 200px; 
-      height: 200px; 
-      border-radius: 50%; 
-      border: 5px solid #007bff; 
-      object-fit: cover; 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    h1 { color: #333; margin-top: 20px; }
-    p { color: #666; font-size: 18px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+    .header { text-align: center; margin-bottom: 40px; }
+    .profil { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #38bdf8; object-fit: cover; box-shadow: 0 4px 15px rgba(56,189,248,0.3); }
+    .card { background: #1e293b; padding: 25px; margin: 20px 0; border-radius: 12px; border: 1px solid #334155; }
+    h1 { margin: 15px 0 5px; font-size: 32px; color: #38bdf8; }
+    h2 { color: #38bdf8; margin-bottom: 15px; border-bottom: 2px solid #38bdf8; padding-bottom: 8px; }
+    .skill { display: inline-block; background: #38bdf8; color: #0f172a; padding: 6px 16px; margin: 5px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+    .project { border-left: 4px solid #38bdf8; padding-left: 15px; margin-bottom: 20px; }
+    .project h3 { color: #f8fafc; margin-bottom: 5px; }
+    .tag { background: #334155; color: #38bdf8; padding: 3px 10px; border-radius: 6px; font-size: 12px; margin-right: 5px; }
+    a { color: #38bdf8; text-decoration: none; }
+    .footer { text-align: center; margin-top: 40px; color: #94a3b8; font-size: 14px; }
   </style>
 </head>
 <body>
-  <img src="https://i.imgur.com/2dq56Vv.png" alt="Foto Profil Raditya" class="profil">
-  <h1>Halo, Saya Raditya</h1>
-  <p>Selamat datang di portofolio saya</p>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.imgur.com/2dq56Vv.png" alt="Foto Profil Raditya" class="profil">
+      <h1>Raditya Pratama</h1>
+      <p>Frontend Developer in Learning | HTML CSS JS</p>
+    </div>
+
+    <div class="card">
+      <h2>Tentang Saya</h2>
+      <p>Halo! Saya Raditya Pratama. Saya fokus belajar Web Development dari 0. 
+      Tujuan saya jadi Frontend Developer. Saat ini saya lagi ngulik HTML, CSS, dan JavaScript 
+      buat bikin website yang interaktif. Portofolio ini tempat saya dokumentasiin progres belajar.</p>
+    </div>
+
+    <div class="card">
+      <h2>Tech Stack</h2>
+      <span class="skill">HTML5</span>
+      <span class="skill">CSS3</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Git & GitHub</span>
+      <span class="skill">Responsive Design</span>
+    </div>
+
+    <div class="card">
+      <h2>3 Projek Ngoding</h2>
+      
+      <div class="project">
+        <h3>1. Portofolio Website Responsif</h3>
+        <p>Website pribadi ini. Dibangun dari 0 pakai HTML5, CSS3 Flexbox & Grid. 
+        Sudah responsive di HP dan Desktop. Hosting pakai GitHub Pages.</p>
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive</span>
+      </div>
+
+      <div class="project">
+        <h3>2. Kalkulator Sederhana dengan JavaScript</h3>
+        <p>Aplikasi kalkulator yang bisa tambah, kurang, kali, bagi. 
+        Menggunakan DOM Manipulation dan Event Listener di JavaScript murni. 
+        Status: Dalam pengembangan.</p>
+        <span class="tag">JavaScript</span><span class="tag">DOM</span><span class="tag">Logic</span>
+      </div>
+
+      <div class="project">
+        <h3>3. Landing Page Produk</h3>
+        <p>Mendesain dan mengoding landing page 1 halaman untuk produk fiktif. 
+        Fokus ke layout yang rapi, animasi hover, dan form kontak. 
+        Status: Konsep & Design Selesai.</p>
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">UI/UX</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Kontak</h2>
+      <p>📷 Instagram: <a href="#">@adityyapr</a> <br>
+      📱 WhatsApp: <a href="#">0895 3792 63392</a> <br>
+      📧 Email: <a href="#">praditya1@icloud.com</a> <br>
+      💻 GitHub: <a href="https://github.com/mobelejenus-cell">github.com/mobelejenus-cell</a></p>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Raditya. Dibuat dengan HTML, CSS, dan Kopi ☕</p>
+    </div>
 </body>
 </html>
