@@ -3,110 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raditya - Boss Level Dev</title>
+    <title>Raditya - Developer</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #0a0a0a; color: #eee; }
-      .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        body { background: #111; color: #eee; }
+       .container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
-        header { text-align: center; padding: 40px 20px; }
-        header h1 { color: #00ff88; }
+        header { text-align: center; padding: 70px 20px; background: linear-gradient(135deg, #00ff88, #0066ff); border-radius: 15px; margin-bottom: 40px; }
+        header h1 { font-size: 3em; }
 
-        section { background: #1a1a1a; padding: 25px; margin: 20px 0; border-radius: 10px; border: 1px solid #333; }
-        input, button { width: 100%; padding: 12px; margin: 8px 0; background: #0a0a0a; color: #eee; border: 1px solid #333; border-radius: 6px; }
+        section { background: #1a1a1a; padding: 30px; margin-bottom: 30px; border-radius: 15px; }
+        section h2 { color: #00ff88; margin-bottom: 20px; }
+
+       .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+       .card { background: #222; padding: 20px; border-radius: 10px; border: 1px solid #333; }
+       .card:hover { border-color: #00ff88; transform: translateY(-5px); }
+
+        input, button { width: 100%; padding: 12px; margin: 8px 0; background: #111; color: #eee; border: 1px solid #333; border-radius: 8px; }
         button { background: #00ff88; color: #000; font-weight: bold; cursor: pointer; }
-        button:hover { background: #00cc6a; }
-
-        /* CHAT BOX */
-      .chat-box { height: 300px; overflow-y: auto; background: #0a0a0a; padding: 15px; border-radius: 8px; margin-bottom: 10px; }
-      .msg { background: #00ff88; color: #000; padding: 10px; border-radius: 8px; margin: 5px 0; width: fit-content; max-width: 70%; }
-      .msg.me { background: #333; color: #eee; margin-left: auto; }
-
-       .hidden { display: none; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>> ROOT_ACCESS: Raditya</h1>
+            <h1>Raditya</h1>
+            <p>Web Developer | Cimahi, Indonesia</p>
         </header>
 
-        <section id="loginSection">
-            <h2>[1] Sistem Login + Register</h2>
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="register()">Register Akun Baru</button>
-            <button onclick="login()">Login</button>
-            <p id="loginStatus"></p>
+        <section>
+            <h2>Tentang Saya</h2>
+            <p>Saya seorang web developer pemula yang suka bikin website interaktif. Sedang belajar HTML, CSS, dan JavaScript.</p>
         </section>
 
-        <section id="chatSection" class="hidden">
-            <h2>[2] Aplikasi Chat Sederhana</h2>
-            <p>Login dulu baru chat nya kebuka!</p>
-            <div class="chat-box" id="chatBox"></div>
-            <input type="text" id="pesanChat" placeholder="Ketik pesan...">
-            <button onclick="kirimPesan()">Kirim</button>
-            <button onclick="logout()" style="background:#ff0044; color:white;">Logout</button>
+        <section>
+            <h2>Project 1: Kalkulator Sederhana</h2>
+            <div class="card">
+                <input type="number" id="angka1" placeholder="Angka 1">
+                <input type="number" id="angka2" placeholder="Angka 2">
+                <button onclick="hitung()">Jumlahkan</button>
+                <h3 id="hasil">Hasil: </h3>
+            </div>
+        </section>
+
+        <section>
+            <h2>Project 2: Generator Quote</h2>
+            <div class="card">
+                <p id="quote">"Klik tombol untuk motivasi"</p>
+                <button onclick="gantiQuote()">Quote Baru</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Kontak</h2>
+            <p>Email: raditya@email.com</p>
         </section>
     </div>
 
 <script>
-    let userLogin = null;
-    let chatPesan = JSON.parse(localStorage.getItem('chat')) || [];
-
-    // CEK APA UDAH LOGIN
-    if(localStorage.getItem('userLogin')) {
-        userLogin = localStorage.getItem('userLogin');
-        showChat();
-    }
-    tampilkanChat();
-
-    // PROJECT 1: LOGIN SYSTEM
-    function register() {
-        let u = document.getElementById('username').value;
-        let p = document.getElementById('password').value;
-        if(u==='' || p==='') return alert('Isi semua!');
-        localStorage.setItem('user_'+u, p);
-        document.getElementById('loginStatus').innerText = 'Register berhasil! Silakan Login';
+    function hitung() {
+        let a1 = Number(document.getElementById('angka1').value);
+        let a2 = Number(document.getElementById('angka2').value);
+        document.getElementById('hasil').innerText = "Hasil: " + (a1 + a2);
     }
 
-    function login() {
-        let u = document.getElementById('username').value;
-        let p = document.getElementById('password').value;
-        let passBenar = localStorage.getItem('user_'+u);
-        if(p === passBenar) {
-            userLogin = u;
-            localStorage.setItem('userLogin', u);
-            showChat();
-        } else {
-            document.getElementById('loginStatus').innerText = 'Username/Password salah!';
-        }
+    let quotes = [
+        '"Coding itu 90% googling, 10% ngoding"',
+        '"Error itu guru terbaik programmer"',
+        '"Jangan menyerah, commit terus"',
+        '"Satu bug lagi, bisa tidur"'
+    ];
+    function gantiQuote() {
+        let random = Math.floor(Math.random() * quotes.length);
+        document.getElementById('quote').innerText = quotes[random];
     }
-
-    function logout() {
-        userLogin = null;
-        localStorage.removeItem('userLogin');
-        document.getElementById('loginSection').classList.remove('hidden');
-        document.getElementById('chatSection').classList.add('hidden');
-    }
-
-    function showChat() {
-        document.getElementById('loginSection').classList.add('hidden');
-        document.getElementById('chatSection').classList.remove('hidden');
-    }
-
-    // PROJECT 2: CHAT APP
-    function kirimPesan() {
-        let pesan = document.getElementById('pesanChat').value;
-        if(pesan === '') return;
-        chatPesan.push({user: userLogin, text: pesan, time: new Date().toLocaleTimeString()});
-        localStorage.setItem('chat', JSON.stringify(chatPesan));
-        document.getElementById('pesanChat').value = '';
-        tampilkanChat();
-    }
-
-    function tampilkanChat() {
-        let box = document.getElementById('chatBox');
-        box.innerHTML = '';
-        chatPesan.forEach(p => {
-            let
+</script>
+</body>
+</html>
