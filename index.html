@@ -3,63 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya - RPL</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Raditya | Portofolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { text-align: center; padding: 80px 20px; }
+        header h1 { font-size: 3em; color: #38bdf8; animation: fadeIn 1s; }
+        header p { font-size: 1.2em; color: #94a3b8; margin-top: 10px; }
+        
+        .btn { display: inline-block; background: #38bdf8; color: #0f172a; 
+               padding: 12px 30px; border-radius: 8px; text-decoration: none; 
+               font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { background: #0ea5e9; transform: scale(1.05); }
+        
+        section { margin: 60px 0; }
+        h2 { color: #38bdf8; margin-bottom: 20px; border-bottom: 2px solid #38bdf8; 
+             display: inline-block; padding-bottom: 5px; }
+        
+        .project { background: #1e293b; padding: 20px; border-radius: 10px; 
+                   margin: 15px 0; transition: 0.3s; }
+        .project:hover { transform: translateY(-5px); }
+        
+        .skill { display: inline-block; background: #1e293b; padding: 8px 15px; 
+                 border-radius: 20px; margin: 5px; border: 1px solid #38bdf8; }
+        
+        footer { text-align: center; padding: 40px; color: #64748b; }
+        
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>👨‍💻 Halo, Saya Raditya</h1>
+            <p>Web Developer | UI/UX Designer dari Cimahi</p>
+            <p style="color:#94a3b8; max-width:600px; margin:15px auto;">
+            Saya suka bikin website yang cepat, rapi, dan enak dilihat. 
+            Sedang cari kesempatan kerja pertama untuk belajar & berkembang.
+            </p>
+            <a href="#kontak" class="btn">Hubungi Saya</a>
+        </header>
 
-    <!-- BAGIAN 1: HEADER -->
-    <header>
-        <h1>Halo, Saya [Raditya Pratama]</h1>
-        <p>Siswa RPL | Calon Web Developer</p>
-        <a href="#kontak">0895379163392</a>
-    </header>
+        <section id="tentang">
+            <h2>Tentang Saya</h2>
+            <p>Saya fresh graduate yang semangat belajar coding. Bisa bikin website 
+            dari nol pake HTML, CSS, JavaScript. Rajin, teliti, dan suka tantangan baru!</p>
+        </section>
+        
+        <section id="skill">
+            <h2>Skill Saya</h2>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">GitHub</span>
+            <span class="skill">UI/UX</span>
+        </section>
 
-    <!-- BAGIAN 2: TENTANG SAYA -->
-    <section id="tentang">
-        <h2>Tentang Saya</h2>
-        <p>Saya siswa jurusan Rekayasa Perangkat Lunak dari Cimahi. 
-        Saya suka bikin website dan belajar coding dari HP. 
-        Tujuan saya jadi Fullstack Developer.</p>
-    </section>
+        <section id="project">
+            <h2>Project Saya</h2>
+            <div class="project">
+                <h3>1. Website Toko Online</h3>
+                <p>Bikin website jualan pake HTML, CSS, JavaScript. Ada keranjang belanja.</p>
+            </div>
+            <div class="project">
+                <h3>2. Aplikasi To-Do List</h3>
+                <p>Aplikasi catatan harian biar nggak lupa tugas. Data tersimpan di browser.</p>
+            </div>
+        </section>
 
-    <!-- BAGIAN 3: SKILL -->
-    <section id="skill">
-        <h2>Skill Saya</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Github</li>
-        </ul>
-    </section>
+        <section id="kontak">
+            <h2>Kontak</h2>
+            <p>Email: raditya@email.com</p>
+            <p>GitHub: github.com/mobelejenus-cell</p>
+            <p>WhatsApp: 08xx-xxxx-xxxx</p>
+        </section>
 
-    <!-- BAGIAN 4: PROJECT -->
-    <section id="project">
-        <h2>Project Saya</h2>
-        <div class="card">
-            <h3>Website Toko Kue</h3>
-            <p>Landing page responsif untuk toko kue. Dibuat dengan HTML & CSS</p>
-            <a href="#">Lihat Demo</a>
-        </div>
-        <div class="card">
-            <h3>Aplikasi To-do List</h3>
-            <p>Aplikasi catatan harian. Data disimpan di browser</p>
-            <a href="#">Lihat Demo</a>
-        </div>
-    </section>
-
-    <!-- BAGIAN 5: KONTAK -->
-    <section id="kontak">
-        <h2>Kontak Saya</h2>
-        <p>WA: 08xx-xxxx-xxxx</p>
-        <p>Email: jayclarencelope@gmail.com</p>
-        <p>Github: https://github.com/mobelejenus-cell</p>
-    </section>
-
-    <footer>
-        <p>© 2026 Dibuat oleh [Raditya Pratama]</p>
-    </footer>
-
+        <footer>
+            <p>© 2026 Raditya. Dibuat dengan semangat 💙</p>
+        </footer>
+    </div>
 </body>
 </html>
