@@ -1,117 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Raditya</title>
-    <style>
-        /* TEMA BARU: UNGU BIRU + FONT KEREN */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Ungu Biru */
-            color: #333;
-            line-height: 1.6;
-        }
-       .container { max-width: 900px; margin: 20px auto; padding: 20px; }
-        header, section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        h1, h2 { color: #764ba2; margin-bottom: 15px; }
-        img.profil { width: 120px; height: 120px; border-radius: 50%; border: 4px solid #667eea; }
-       .sosmed a { margin-right: 15px; text-decoration: none; font-weight: 600; color: #667eea; }
-        button {
-            background: #667eea; color: white; border: none; padding: 10px 20px;
-            border-radius: 8px; cursor: pointer; margin: 5px;
-        }
-        button:hover { background: #764ba2; }
-        input { padding: 10px; border: 2px solid #ddd; border-radius: 8px; }
-       .todo-item { display: flex; justify-content: space-between; padding: 10px; background: #f4f4f4; margin: 5px 0; border-radius: 5px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Raditya</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; padding: 50px; }
+    .profil { width: 200px; height: 200px; border-radius: 50%; border: 5px solid #007bff; object-fit: cover; }
+    h1 { color: #333; }
+  </style>
 </head>
 <body>
-    <div class="container">
-
-        <header style="text-align: center;">
-            <img src="https://i.imgur.com/8Km9tLL.png" alt="Foto Profil" class="profil">
-            <h1>Halo, Saya Raditya 👋</h1>
-
-            <section>
-                <h2>Tentang Saya</h2>
-                <p>Saya adalah seorang pelajar yang semangat belajar coding dan web development.
-                Saya suka bikin project kecil-kecilan seperti kalkulator dan aplikasi web.
-                Tujuan saya jadi Web Developer handal!</p>
-            </section>
-
-            <div class="sosmed">
-                <h2>Hubungi Saya</h2>
-                <a href="https://github.com/mobelejenus-cell" target="_blank">GitHub</a>
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-                <a href="mailto:mobelejenus-cell@gmail.com">Email</a>
-            </div>
-        </header>
-
-        <section>
-            <h2>Project 1: Kalkulator</h2>
-            <input type="number" id="angka1" placeholder="Angka 1">
-            <input type="number" id="angka2" placeholder="Angka 2">
-            <button onclick="hitung('tambah')">+</button>
-            <button onclick="hitung('kurang')">-</button>
-            <p>Hasil: <span id="hasil">0</span></p>
-        </section>
-
-        <section>
-            <h2>Project 2: Quote Harian</h2>
-            <p id="quote">"Kerja keras tidak akan mengkhianati hasil"</p>
-            <button onclick="gantiQuote()">Ganti Quote</button>
-        </section>
-
-        <section>
-            <h2>Project 3: To Do List</h2>
-            <input type="text" id="tugas" placeholder="Tambah tugas baru...">
-            <button onclick="tambahTugas()">Tambah</button>
-            <div id="listTugas"></div>
-        </section>
-
-        <section>
-            <h2>Kontak</h2>
-            <p>Email: mobelejenus-cell@gmail.com</p>
-            <p>WhatsApp: 08xx-xxxx-xxxx</p>
-        </section>
-
-    </div>
-
-    <script>
-        // KALKULATOR
-        function hitung(op) {
-            let a = parseFloat(document.getElementById('angka1').value);
-            let b = parseFloat(document.getElementById('angka2').value);
-            let hasil = op === 'tambah'? a + b : a - b;
-            document.getElementById('hasil').innerText = hasil;
-        }
-        // QUOTE
-        const quotes = ["Kerja keras tidak akan mengkhianati hasil", "Belajar 1% setiap hari", "Jangan menyerah Raditya!"];
-        function gantiQuote() {
-            let random = Math.floor(Math.random() * quotes.length);
-            document.getElementById('quote').innerText = quotes[random];
-        }
-        // TO DO LIST
-        function tambahTugas() {
-            let tugas = document.getElementById('tugas').value;
-            if(tugas === '') return;
-            let div = document.createElement('div');
-            div.className = 'todo-item';
-            div.innerHTML = `<span>${tugas}</span> <button onclick="this.parentElement.remove()">Hapus</button>`;
-            document.getElementById('listTugas').appendChild(div);
-            document.getElementById('tugas').value = '';
-        }
-    </script>
-</body>
-</html>
+  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGBgYGRgYGBUYFxcYGBcYGBcYHSggGBolHRUVITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDAAH/xAA3EAACAQIEBAMEBQQDAAAAAAABAgADEQQhBRIxQVEGEyJRYQYiQlKhsQcUUpLB4SNCUrHR8BU0Q3Ozw//EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA8ogAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
